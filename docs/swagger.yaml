@@ -35,6 +35,13 @@ definitions:
       message:
         type: string
     type: object
+  handler.ShowOpeningResponse:
+    properties:
+      data:
+        $ref: '#/definitions/schemas.OpeningResponse'
+      message:
+        type: string
+    type: object
   schemas.OpeningResponse:
     properties:
       company:
@@ -88,6 +95,34 @@ paths:
           schema:
             $ref: '#/definitions/handler.ErrorResponse'
       summary: Delete opening
+      tags:
+      - Openings
+    get:
+      consumes:
+      - application/json
+      description: Show a job opening
+      parameters:
+      - description: Opening identification
+        in: query
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/handler.ShowOpeningResponse'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/handler.ErrorResponse'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/handler.ErrorResponse'
+      summary: Show opening
       tags:
       - Openings
     post:
