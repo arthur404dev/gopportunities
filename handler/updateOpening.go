@@ -73,5 +73,5 @@ func UpdateOpeningHandler(ctx *gin.Context) {
 		sendError(ctx, http.StatusInternalServerError, "error updating opening")
 		return
 	}
-	sendSuccess(ctx, "update-opening", opening)
+	sendSuccess(ctx, http.StatusOK, "update-opening", opening)
 }
