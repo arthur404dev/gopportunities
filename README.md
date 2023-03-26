@@ -32,7 +32,7 @@ You can follow the step-by-step instructions on how to create this project by wa
 
 To use this project, you need to follow these steps:
 
-1. Clone the repository: `git clone https://github.com/username/repo-name.git`
+1. Clone the repository: `git clone https://github.com/arthur404dev/gopportunities.git`
 2. Install the dependencies: `go mod download`
 3. Build the application: `go build`
 4. Run the application: `./main`
