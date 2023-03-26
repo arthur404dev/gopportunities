@@ -170,8 +170,8 @@ paths:
       produces:
       - application/json
       responses:
-        "200":
-          description: OK
+        "201":
+          description: Created
           schema:
             $ref: '#/definitions/handler.CreateOpeningResponse'
         "400":
