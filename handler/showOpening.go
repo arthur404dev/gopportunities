@@ -31,5 +31,5 @@ func ShowOpeningHandler(ctx *gin.Context) {
 		return
 	}
 
-	sendSuccess(ctx, "show-opening", opening)
+	sendSuccess(ctx, http.StatusOK, "show-opening", opening)
 }

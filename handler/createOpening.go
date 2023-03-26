@@ -15,7 +15,7 @@ import (
 // @Accept json
 // @Produce json
 // @Param request body CreateOpeningRequest true "Request body"
-// @Success 200 {object} CreateOpeningResponse
+// @Success 201 {object} CreateOpeningResponse
 // @Failure 400 {object} ErrorResponse
 // @Failure 500 {object} ErrorResponse
 // @Router /opening [post]
@@ -45,5 +45,5 @@ func CreateOpeningHandler(ctx *gin.Context) {
 		return
 	}
 
-	sendSuccess(ctx, "create-opening", opening)
+	sendSuccess(ctx, http.StatusCreated, "create-opening", opening)
 }
